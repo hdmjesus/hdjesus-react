@@ -35,7 +35,6 @@ const config = {
               importLoaders: 1,
             },
           },
-          'postcss-loader',
         ],
       },
       {

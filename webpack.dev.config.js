@@ -28,16 +28,7 @@ const config = {
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-            },
-          },
-          'postcss-loader',
-        ],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|gif|jpg|svg|webp)$/,
@@ -61,9 +52,7 @@ const config = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-    alias: {
-      'react-dom': '@hot-loader/react-dom',
-    },
+    alias: {},
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
