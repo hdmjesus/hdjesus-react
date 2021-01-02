@@ -4,23 +4,23 @@ const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
-  entry: {
-    modules: ['react', 'react-dom', 'react-router', 'react-hot-loader'],
-  },
+	entry: {
+		modules: ['react', 'react-dom', 'react-router'],
+	},
 
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].[contenthash].dll.js',
-    library: '[name]',
-  },
+	output: {
+		path: path.resolve(__dirname, 'dist'),
+		filename: 'js/[name].[contenthash].dll.js',
+		library: '[name]',
+	},
 
-  plugins: [
-    new webpack.DllPlugin({
-      name: '[name]',
-      path: path.join(__dirname, '[name]-manifest.json'),
-    }),
-  ],
-  optimization: {
-    minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin()],
-  },
+	plugins: [
+		new webpack.DllPlugin({
+			name: '[name]',
+			path: path.join(__dirname, '[name]-manifest.json'),
+		}),
+	],
+	optimization: {
+		minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin()],
+	},
 };
