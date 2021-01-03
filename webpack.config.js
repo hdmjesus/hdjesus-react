@@ -1,9 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlCriticalPlugin = require('html-critical-webpack-plugin');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
-//Limpia los build anteriores antes de hacer build
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -70,19 +71,42 @@ const config = {
 			//Asi agregamos el favicon
 			favicon: path.resolve(__dirname, 'src/statics/favicon.png'),
 		}),
+		// Agrega atributos a la etiqueta script de cada entry
+		new ScriptExtHtmlWebpackPlugin({
+			async: ['app'],
+		}),
+		// Agrega cualquier asset al index html
 		new AddAssetHtmlPlugin({
 			filepath: path.resolve(__dirname, 'dist/js/*.dll.js'),
 			outputPath: 'js',
 			publicPath: 'js/',
 		}),
+		// Agrega los archivos .css al index.html
 		new MiniCssExtractPlugin({
 			filename: 'css/[name].[contenthash].css',
 			chunkFilename: 'css/[id].[chunkhash].css',
 		}),
+		// Determina el css critico para la carga inicial de nuestra web
+		new HtmlCriticalPlugin({
+			base: path.join(path.resolve(__dirname), 'dist/'),
+			src: 'index.html',
+			dest: 'index.html',
+			inline: true,
+			minify: true,
+			extract: true,
+			width: 375,
+			height: 565,
+			penthouse: {
+				blockJSRequests: false,
+			},
+		}),
+		// Trae las referencias de los modulos core de nuestra app
 		new webpack.DllReferencePlugin({
 			manifest: require('./modules-manifest.json'),
 			// context: path.resolve(__dirname, '.src/'),
 		}),
+		// Elimina las ouput repetidas en cada build de la carpeta dist
+		//Limpia los build anteriores antes de hacer build
 		new CleanWebpackPlugin({
 			cleanOnceBeforeBuildPatterns: ['**/app.*'],
 		}),

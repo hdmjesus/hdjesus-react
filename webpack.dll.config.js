@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
@@ -18,6 +19,10 @@ module.exports = {
 		new webpack.DllPlugin({
 			name: '[name]',
 			path: path.join(__dirname, '[name]-manifest.json'),
+		}),
+		new ScriptExtHtmlWebpackPlugin({
+			async: ['modules'],
+			defaultAttribute: 'async',
 		}),
 	],
 	optimization: {

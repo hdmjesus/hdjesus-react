@@ -1,76 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content=" Soy Frontend Developer y deseo dar soluciones ambientales ♻️ con ayuda de la tecnología💻."
-    />
-    <meta name="robots" content="index" />
-    <meta name="robots" content="follow" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Marmelad&family=Ubuntu:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      defer
-      rel="dns-prefetch"
-      src="https://kit.fontawesome.com/4f82ce23a4.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Jesus Hernandez</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content=" Soy Frontend Developer y deseo dar soluciones ambientales ♻️ con ayuda de la tecnología💻."
+		/>
+		<!-- SEO -->
+		<meta name="robots" content="index" />
+		<meta name="robots" content="follow" />
+		<!-- SEO -->
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      rel="preconnect"
-      rel="dns-prefetch"
-      src="https://www.googletagmanager.com/gtag/js?id=UA-154775224-1"
-    ></script>
-    <script defer>
-      window.dataLayer = window.dataLayer || [];
+		<!-- Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Marmelad&family=Ubuntu:wght@300;400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+		<link rel="dns-prefetch" href="https://fonts.gstatic.com/" crossorigin />
+		<!-- Fonts -->
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
+		<!-- ICONS -->
+		<script
+			defer
+			rel="dns-prefetch"
+			src="https://kit.fontawesome.com/4f82ce23a4.js"
+			crossorigin="anonymous"
+		></script>
+		<!-- ICONS -->
 
-      gtag('config', 'UA-154775224-1');
-    </script>
-  </head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			rel="preconnect"
+			rel="dns-prefetch"
+			src="https://www.googletagmanager.com/gtag/js?id=UA-154775224-1"
+		></script>
+		<script defer>
+			window.dataLayer = window.dataLayer || [];
 
-  <body>
-    <!-- Load Facebook SDK for JavaScript -->
-    <div id="fb-root"></div>
-    <script>
-      window.fbAsyncInit = function () {
-        FB.init({
-          xfbml: true,
-          version: 'v8.0',
-        });
-      };
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
 
-      (function (d, s, id) {
-        var js,
-          fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      })(document, 'script', 'facebook-jssdk');
-    </script>
+			gtag('config', 'UA-154775224-1');
+		</script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<title>Jesus Hernandez</title>
+	</head>
 
-    <!-- Your Chat Plugin code -->
-    <div
-      class="fb-customerchat"
-      attribution="setup_tool"
-      page_id="353111848945594"
-      theme_color="#67b868"
-      logged_in_greeting="Hola un placer, ¿en que puedo ayudarte?"
-      logged_out_greeting="Hola un placer, ¿en que puedo ayudarte?"
-    ></div>
-    <main id="app"></main>
-  </body>
+	<body>
+		<!-- Load Facebook SDK for JavaScript -->
+		<div id="fb-root"></div>
+		<script async>
+			window.fbAsyncInit = function () {
+				FB.init({
+					xfbml: true,
+					version: 'v8.0',
+				});
+			};
+
+			(function (d, s, id) {
+				var js,
+					fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s);
+				js.id = id;
+				js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+				fjs.parentNode.insertBefore(js, fjs);
+			})(document, 'script', 'facebook-jssdk');
+		</script>
+
+		<!-- Your Chat Plugin code -->
+		<div
+			class="fb-customerchat"
+			attribution="setup_tool"
+			page_id="353111848945594"
+			theme_color="#67b868"
+			logged_in_greeting="Hola un placer, ¿en que puedo ayudarte?"
+			logged_out_greeting="Hola un placer, ¿en que puedo ayudarte?"
+		></div>
+		<!-- Load Facebook SDK for JavaScript -->
+
+		<main id="app"></main>
+	</body>
 </html>
