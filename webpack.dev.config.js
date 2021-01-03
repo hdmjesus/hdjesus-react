@@ -36,16 +36,16 @@ const config = {
 					{
 						loader: 'file-loader',
 						options: {
-							outputPath: 'assets/',
+							outputPath: 'assets/[name].[ext]',
 						},
 					},
-					{
-						loader: 'url-loader',
-						options: {
-							mimetype: 'image/png',
-							limit: 90000,
-						},
-					},
+					// {
+					// 	loader: 'url-loader',
+					// 	// options: {
+					// 	// 	mimetype: 'image/png',
+					// 	// 	limit: 90000,
+					// 	// },
+					// },
 				],
 			},
 		],
