@@ -5,8 +5,8 @@ import Portafolio from '@/views/Portafolio';
 const App = () => (
 	<BrowserRouter>
 		<Switch>
-			<Route path='/' component={Home} />
-			<Route path='/portafolio' component={Portafolio} />
+			<Route exact path='/' component={Home} />
+			<Route exact path='/portafolio' component={Portafolio} />
 			{/* <Route component={} /> */}
 		</Switch>
 	</BrowserRouter>

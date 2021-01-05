@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 import facebook from '@/statics/icons/face.webp';
 import instagram from '@/statics/icons/ig.webp';
 import twitter from '@/statics/icons/twitter.webp';
@@ -7,11 +7,18 @@ import linkedin from '@/statics/icons/lik.webp';
 import github from '@/statics/icons/gh.webp';
 
 const Footer = () => {
+	const [year, setYear] = useState(Number);
+	const date = new Date();
+
+	useEffect(() => {
+		setYear(date.getFullYear());
+	}, []);
+
 	return (
-		<section>
-			<div class='footer_redes'>
-				<div class='container'>
-					<ul class='social-list'>
+		<footer>
+			<div className='footer_redes'>
+				<div className='container'>
+					<ul className='social-list'>
 						<li>
 							<a
 								href='https://www.facebook.com/hernandez41'
@@ -91,16 +98,19 @@ const Footer = () => {
 				</div>
 			</div>
 
-			<div class='footer__nav'>
-				<div class='container'>
-					<div class='footer__flex'>
+			<div className='footer__nav'>
+				<div className='container'>
+					<div className='footer__flex'>
 						<nav>
 							<ul>
-								<li>
-									<a id='home-router-footer'>Inicio</a>
+								<li aria-label='Inicio'>
+									<Link to={'/'} tabindex='0'>
+										{' '}
+										Inicio
+									</Link>
 								</li>
-								<li>
-									<a id='portafolio-router-footer'>Portafolio</a>
+								<li aria-label='Proyectos'>
+									<Link to={'/portafolio'}> Portafolio</Link>
 								</li>
 							</ul>
 						</nav>
@@ -108,13 +118,14 @@ const Footer = () => {
 				</div>
 			</div>
 
-			<div class='footer__derechos'>
-				<div class='container'>
-					<p>&copy Jesus Hernandez All rights reserved 2021.</p>
+			<div className='footer__derechos'>
+				<div className='container'>
+					<p>&copy; Jesus Hernandez All rights reserved {year}</p>
+
 					<p>React Js</p>
 				</div>
 			</div>
-		</section>
+		</footer>
 	);
 };
 

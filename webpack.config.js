@@ -27,15 +27,11 @@ const config = {
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.css$/,
+				test: /\.(s*)css$/,
 				use: [
-					MiniCssExtractPlugin.loader,
-					{
-						loader: 'css-loader',
-						options: {
-							importLoaders: 1,
-						},
-					},
+					{ loader: MiniCssExtractPlugin.loader },
+					'css-loader',
+					'sass-loader',
 				],
 			},
 			{
@@ -47,15 +43,15 @@ const config = {
 							outputPath: 'assets/',
 						},
 					},
-					{
-						loader: 'url-loader',
-						options: {
-							mimetype: 'image/png',
-							limit: 1000,
-							name: '[contenthash].[ext]',
-							outputPath: 'assets',
-						},
-					},
+					// {
+					// 	loader: 'url-loader',
+					// 	options: {
+					// 		mimetype: 'image/png',
+					// 		limit: 1000,
+					// 		name: '[contenthash].[ext]',
+					// 		outputPath: 'assets',
+					// 	},
+					// },
 				],
 			},
 		],
@@ -87,19 +83,19 @@ const config = {
 			chunkFilename: 'css/[id].[chunkhash].css',
 		}),
 		// Determina el css critico para la carga inicial de nuestra web
-		// new HtmlCriticalPlugin({
-		// 	base: path.join(path.resolve(__dirname), 'dist/'),
-		// 	src: 'index.html',
-		// 	dest: 'index.html',
-		// 	inline: true,
-		// 	minify: true,
-		// 	extract: true,
-		// 	width: 375,
-		// 	height: 565,
-		// 	penthouse: {
-		// 		blockJSRequests: false,
-		// 	},
-		// }),
+		new HtmlCriticalPlugin({
+			base: path.join(path.resolve(__dirname), 'dist/'),
+			src: 'index.html',
+			dest: 'index.html',
+			inline: true,
+			minify: true,
+			extract: true,
+			width: 375,
+			height: 565,
+			penthouse: {
+				blockJSRequests: false,
+			},
+		}),
 		// Trae las referencias de los modulos core de nuestra app
 		new webpack.DllReferencePlugin({
 			manifest: require('./modules-manifest.json'),

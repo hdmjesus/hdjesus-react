@@ -5,19 +5,19 @@ import aplicationScaling from '@/statics/images/undraw_clean_up_ucm0.svg';
 
 const Services = () => {
 	return (
-		<section class='services' tabindex='0'>
-			<h2 class='title-level2'>Podras contar con...</h2>
-			<div class='services__container'>
-				<article class='service'>
+		<section className='services' tabindex='0'>
+			<h2 className='title-level2'>Podras contar con...</h2>
+			<div className='services__container'>
+				<article className='service'>
 					<figure>
-						<div class='figure-service'></div>
+						<div className='figure-service'></div>
 
-						<div class='service__image'>
+						<div className='service__image'>
 							<img src={resposibeDesing} alt='Responsibe desing' />
 						</div>
 					</figure>
 
-					<div class='service__description'>
+					<div className='service__description'>
 						<h3>RESPONSIVE DESING</h3>
 						<p>
 							El Responsive Design o diseño adaptativo, es la técnica que se usa
@@ -28,16 +28,16 @@ const Services = () => {
 					</div>
 				</article>
 
-				<article class='service'>
+				<article className='service'>
 					<figure>
-						<div class='figure-service'></div>
+						<div className='figure-service'></div>
 
-						<div class='service__image'>
+						<div className='service__image'>
 							<img src={codeSemanting} alt='Responsibe desing' />
 						</div>
 					</figure>
 
-					<div class='service__description'>
+					<div className='service__description'>
 						<h3>CODIGO SEMANTICO</h3>
 						<p>
 							Los motores de búsqueda analizan el código para saber qué clase de
@@ -46,16 +46,16 @@ const Services = () => {
 					</div>
 				</article>
 
-				<article class='service'>
+				<article className='service'>
 					<figure>
-						<div class='figure-service'></div>
+						<div className='figure-service'></div>
 
-						<div class='service__image'>
+						<div className='service__image'>
 							<img src={aplicationScaling} alt='Responsibe desing' />
 						</div>
 					</figure>
 
-					<div class='service__description'>
+					<div className='service__description'>
 						<h3>APLICACIONES ESCALABLES</h3>
 						<p>
 							Se asegura que su aplicacion pueda crecer sin verse comprometido

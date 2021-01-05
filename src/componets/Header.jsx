@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
-import logo from '@/statics/icons/hdjesus.png';
+import { Link } from 'react-router-dom';
+import logo from '@/statics/icons/logo.svg';
 import facebook from '@/statics/icons/face.webp';
 import instagram from '@/statics/icons/ig.webp';
 import twitter from '@/statics/icons/twitter.webp';
@@ -9,36 +9,39 @@ import github from '@/statics/icons/gh.webp';
 
 const Header = () => {
 	return (
-		<header class='header' id='header'>
-			<figure class='header__logo'>
-				<a href='/'>
-					<img src={logo} width='50px' height='50px' alt='Logo personal' />{' '}
-				</a>
+		<header className='header' id='header'>
+			<figure className='header__logo'>
+				<Link to={'/'}>
+					<img src={logo} alt='Logo personal' />
+				</Link>
 			</figure>
 
-			<div class='header__components'>
-				<nav class='header--nav-mobile' arial-label='menu'>
+			<div className='header__components'>
+				<nav className='header--nav-mobile' arial-label='menu'>
 					<p id='nav-mobile'>
-						<i class='fas fa-bars'></i>
+						<i className='fas fa-bars'></i>
 					</p>
 
-					<nav class='enlances uno' id='enlances'>
-						<ul class='list-nav' id='list-nav-mobile'>
+					<nav className='enlances uno' id='enlances'>
+						<ul className='list-nav' id='list-nav-mobile'>
 							<li>
-								<a id='home-router-header'>
-									<i class='fa fa-home'></i> | Inicio
-								</a>
+								<Link to={`/`}>
+									{' '}
+									<i className='fa fa-home'></i> | Inicio
+								</Link>
 							</li>
 							<li>
-								<a id='portafolio-router-header'>
-									<i class='fa fa-briefcase' id='portafolio'></i> | Portafolio
-								</a>
+								<Link to={`/portafolio`}>
+									{' '}
+									<i className='fa fa-briefcase' id='portafolio'></i> |
+									Portfolio
+								</Link>
 							</li>
 						</ul>
-						<div class='redes'>
-							<div class='redes-enlace'>
-								<div class='container'>
-									<ul class='social-list'>
+						<div className='redes'>
+							<div className='redes-enlace'>
+								<div className='container'>
+									<ul className='social-list'>
 										<li>
 											<a
 												href='https://www.facebook.com/hernandez41'
@@ -121,33 +124,30 @@ const Header = () => {
 					</nav>
 				</nav>
 
-				<nav class='header--nav-desktop'>
+				<nav className='header--nav-desktop'>
 					<ul>
 						<li aria-label='Inicio'>
-							{' '}
-							<button id='home-router-desktop'>
-								<a tabindex='0'>Inicio</a>
-							</button>{' '}
+							<Link to={'/'} tabindex='0'>
+								{' '}
+								Inicio
+							</Link>
 						</li>
 						<li aria-label='Proyectos'>
-							{' '}
-							<button id='projects-router-desktop'>
-								<a tabindex='0'>Portafolio</a>
-							</button>{' '}
+							<Link to={'/portafolio'}> Portafolio</Link>
 						</li>
 					</ul>
 				</nav>
 
 				<button
-					class='switch'
+					className='switch'
 					id='switch'
 					aria-label='Dark mode button'
 					tabindex='0'>
 					<span>
-						<i class='fas fa-sun'></i>
+						<i className='fas fa-sun'></i>
 					</span>
 					<span>
-						<i class='fas fa-moon'></i>
+						<i className='fas fa-moon'></i>
 					</span>
 				</button>
 			</div>

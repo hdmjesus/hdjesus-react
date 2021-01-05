@@ -14,7 +14,7 @@ $font-body: 'Ubuntu', sans-serif;
 \*------------------------------------*/
 
 $color-body: #f6f9fc;
-// $color-primary: #00c02acc;
+$color-primary: #00c02acc;
 $color-primary: #4917b0;
 
 $color-second: #32325d;
@@ -66,48 +66,48 @@ $button-night: #343d5b;
 $button-day: #e0d75b;
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 .container {
-  width: 90%;
-  max-width: 1600px;
-  margin: 0 auto;
+	width: 90%;
+	max-width: 1600px;
+	margin: 0 auto;
 }
 
 p {
-  body.dark & {
-    color: $white;
-  }
+	body.dark & {
+		color: $white;
+	}
 }
 
 h2 {
-  body.dark & {
-    color: $color-second-dark;
-  }
+	body.dark & {
+		color: $color-second-dark;
+	}
 }
 h1 {
-  body.dark & {
-    color: $color-second-dark;
-  }
+	body.dark & {
+		color: $color-second-dark;
+	}
 }
 
 h3 {
-  body.dark & {
-    color: $white;
-  }
+	body.dark & {
+		color: $white;
+	}
 }
 h4 {
-  body.dark & {
-    color: $white;
-  }
+	body.dark & {
+		color: $white;
+	}
 }
 img {
-  pointer-events: none;
+	pointer-events: none;
 }
 
 body.dark .hero__curriculum p {
-  color: $color-second-dark;
+	color: $color-second-dark;
 }
