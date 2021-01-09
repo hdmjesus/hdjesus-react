@@ -13,7 +13,11 @@ const Services = () => {
 						<div className='figure-service'></div>
 
 						<div className='service__image'>
-							<img src={resposibeDesing} alt='Responsibe desing' />
+							<img
+								src={resposibeDesing}
+								alt='Responsibe desing'
+								loading='lazy'
+							/>
 						</div>
 					</figure>
 
@@ -33,7 +37,7 @@ const Services = () => {
 						<div className='figure-service'></div>
 
 						<div className='service__image'>
-							<img src={codeSemanting} alt='Responsibe desing' />
+							<img src={codeSemanting} alt='Responsibe desing' loading='lazy' />
 						</div>
 					</figure>
 
@@ -51,7 +55,11 @@ const Services = () => {
 						<div className='figure-service'></div>
 
 						<div className='service__image'>
-							<img src={aplicationScaling} alt='Responsibe desing' />
+							<img
+								src={aplicationScaling}
+								alt='Responsibe desing'
+								loading='lazy'
+							/>
 						</div>
 					</figure>
 

@@ -31,6 +31,7 @@ const Footer = () => {
 									width='35px'
 									height='37px'
 									alt='facebook Jesus'
+									loading='lazy'
 								/>
 							</a>
 						</li>
@@ -46,6 +47,7 @@ const Footer = () => {
 									width='35px'
 									height='37px'
 									alt='Instagram Jesus'
+									loading='lazy'
 								/>
 							</a>
 						</li>
@@ -61,6 +63,7 @@ const Footer = () => {
 									width='35px'
 									height='37px'
 									alt='linkedin Jesus'
+									loading='lazy'
 								/>
 							</a>
 						</li>
@@ -76,6 +79,7 @@ const Footer = () => {
 									width='35px'
 									height='37px'
 									alt='twitter Jesus'
+									loading='lazy'
 								/>
 							</a>
 						</li>
@@ -91,6 +95,7 @@ const Footer = () => {
 									width='35px'
 									height='37px'
 									alt='github Jesus'
+									loading='lazy'
 								/>
 							</a>
 						</li>
