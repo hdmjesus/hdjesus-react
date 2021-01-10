@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-const ProjectItem = () => {
+const ProjectItem = (props) => {
+	console.log(props);
 	return (
 		<article className='proyecto'>
 			<div className='proyecto__description'>
-				<h3 className='proyecto__title'>title</h3>
-				<p>description</p>
+				<h3 className='proyecto__title'>{props.title}</h3>
+				<p>{props.description}</p>
 
 				<div className='proyecto__buttons'>
 					<a
 						rel='noopener'
 						rel='noreferrer'
 						target='_blank'
-						href=''
+						href={props.online}
 						className='button-primary'>
 						Ver Online
 					</a>
@@ -20,7 +21,7 @@ const ProjectItem = () => {
 						rel='noopener'
 						rel='noreferrer'
 						target='_blank'
-						href=''
+						href={props.github}
 						className='button-second'>
 						{' '}
 						Ver codigo
@@ -29,7 +30,7 @@ const ProjectItem = () => {
 			</div>
 
 			<figure className='proyecto__image'>
-				<img src='' width='300' height='230' alt='' />
+				<img src={props.img} width='300' height='230' alt={props.title} />
 			</figure>
 		</article>
 	);
