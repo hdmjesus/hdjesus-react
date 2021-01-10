@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ProjectItem = (props) => {
-	console.log(props);
 	return (
 		<article className='proyecto'>
 			<div className='proyecto__description'>

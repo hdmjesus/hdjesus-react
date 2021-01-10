@@ -13,6 +13,7 @@ const App = () => {
 			.then((res) => res.json())
 			.then(({ hdjesus: { proyectos } }) => setData(proyectos));
 	}, []);
+
 	const { Provider } = Contexto;
 
 	return (
