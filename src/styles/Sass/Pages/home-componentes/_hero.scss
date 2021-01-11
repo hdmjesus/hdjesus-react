@@ -45,6 +45,9 @@
 		width: 100%;
 		height: auto;
 		margin: 30px auto;
+		@include media(tablet) {
+			width: 400px;
+		}
 		img {
 			width: 100%;
 		}

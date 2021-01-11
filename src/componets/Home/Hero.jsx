@@ -35,14 +35,14 @@ const Hero = () => {
 					</div>
 
 					<figure className='hero__work' role='banner'>
-						<img src={Banner} alt='Espacio de trabajo' loading='lazy' />
+						<img src={Banner} alt='Espacio de trabajo' />
 					</figure>
 				</article>
 
 				<article className='jesusH'>
 					<picture className='jesusH__image'>
 						<source media='(min-width:768px )' srcset={fotoHdjesusX2} />
-						<img src={fotoHdjesus} alt='Jesus Hernandez' loading='lazy' />
+						<img src={fotoHdjesus} alt='Jesus Hernandez' />
 					</picture>
 
 					<div className='jesusH__description' tabindex='0'>

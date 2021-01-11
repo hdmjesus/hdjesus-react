@@ -24,9 +24,9 @@ const Header = () => {
 		const btnDarkMode = document.getElementById('switch');
 		document.body.classList.toggle('dark');
 		btnDarkMode.classList.toggle('active');
-
+		let statusDarkMode = document.body.classList.contains('dark');
 		//   Guardamos el modo nocturne en localstores
-		if (document.body.classList.contains('dark')) {
+		if (statusDarkMode) {
 			localStorage.setItem('dark-mode', 'true');
 		} else {
 			localStorage.setItem('dark-mode', 'false');
@@ -39,6 +39,7 @@ const Header = () => {
 		setContainer($enlaces);
 
 		if (localStorage.getItem('dark-mode') === 'true') {
+			document.body.classList.contains('dark');
 			document.body.classList.add('dark');
 			btnDarkMode.classList.add('active');
 		} else {
