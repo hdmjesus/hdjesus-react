@@ -8,6 +8,44 @@ import linkedin from '@/statics/icons/lik.webp';
 import github from '@/statics/icons/gh.webp';
 
 const Header = () => {
+	const [container, setContainer] = useState([]);
+
+	function toogleBtnMenu() {
+		if (container.classList.contains('dos')) {
+			container.classList.remove('dos');
+			container.classList.add('uno');
+		} else {
+			container.classList.remove('uno');
+			container.classList.add('dos');
+		}
+	}
+
+	function darkMode() {
+		const btnDarkMode = document.getElementById('switch');
+		document.body.classList.toggle('dark');
+		btnDarkMode.classList.toggle('active');
+
+		//   Guardamos el modo nocturne en localstores
+		if (document.body.classList.contains('dark')) {
+			localStorage.setItem('dark-mode', 'true');
+		} else {
+			localStorage.setItem('dark-mode', 'false');
+		}
+	}
+
+	useEffect(() => {
+		const $enlaces = document.getElementById('enlances');
+		const btnDarkMode = document.getElementById('switch');
+		setContainer($enlaces);
+
+		if (localStorage.getItem('dark-mode') === 'true') {
+			document.body.classList.add('dark');
+			btnDarkMode.classList.add('active');
+		} else {
+			document.body.classList.remove('dark');
+			btnDarkMode.classList.remove('active');
+		}
+	}, []);
 	return (
 		<header className='header' id='header'>
 			<figure className='header__logo'>
@@ -18,7 +56,7 @@ const Header = () => {
 
 			<div className='header__components'>
 				<nav className='header--nav-mobile' arial-label='menu'>
-					<p id='nav-mobile'>
+					<p id='nav-mobile' onClick={toogleBtnMenu}>
 						<i className='fas fa-bars'></i>
 					</p>
 
@@ -47,7 +85,7 @@ const Header = () => {
 												href='https://www.facebook.com/hernandez41'
 												rel='noopener'
 												rel='noreferrer'
-												target>
+												target='__blank'>
 												{' '}
 												<img
 													src={facebook}
@@ -62,7 +100,7 @@ const Header = () => {
 												href='https://www.instagram.com/hdmjesus'
 												rel='noopener'
 												rel='noreferrer'
-												target>
+												target='__blank'>
 												{' '}
 												<img
 													src={instagram}
@@ -77,7 +115,7 @@ const Header = () => {
 												href='https://www.linkedin.com/in/hdmjesus/'
 												rel='noopener'
 												rel='noreferrer'
-												target>
+												target='__blank'>
 												{' '}
 												<img
 													src={linkedin}
@@ -92,7 +130,7 @@ const Header = () => {
 												href='https://twitter.com/HDMjesus'
 												rel='noopener'
 												rel='noreferrer'
-												target>
+												target='__blank'>
 												{' '}
 												<img
 													src={twitter}
@@ -107,7 +145,7 @@ const Header = () => {
 												href='https://github.com/hdmjesus'
 												rel='noopener'
 												rel='noreferrer'
-												target>
+												target='__blank'>
 												{' '}
 												<img
 													src={github}
@@ -142,7 +180,8 @@ const Header = () => {
 					className='switch'
 					id='switch'
 					aria-label='Dark mode button'
-					tabindex='0'>
+					tabindex='0'
+					onClick={darkMode}>
 					<span>
 						<i className='fas fa-sun'></i>
 					</span>

@@ -4,9 +4,28 @@ import fotoHdjesusX2 from '@/statics/images/yox2.webp';
 import Banner from '@/statics/images/work-home.svg';
 
 const Hero = () => {
+	function handleHeader(entries) {
+		const hd = document.getElementById('header');
+
+		if (entries[0].intersectionRatio == 0) {
+			hd.classList.add('up');
+		} else {
+			hd.classList.remove('up');
+		}
+	}
+	let options = {
+		root: null,
+		threshold: 0.5,
+	};
+
+	useEffect(() => {
+		const barrita = document.getElementById('barra');
+		const observer = new IntersectionObserver(handleHeader, options);
+		observer.observe(barrita);
+	}, []);
 	return (
-		<section className='hero'>
-			<hr className='line--header' />
+		<section className='hero' id='hero'>
+			<hr className='line--header' id='barra' />
 			<div className='hero__container'>
 				<article className='hero__skills'>
 					<div className='hero__curriculum' aria-label='Curriculum'>

@@ -24,7 +24,7 @@ const Footer = () => {
 								href='https://www.facebook.com/hernandez41'
 								rel='noopener'
 								rel='noreferrer'
-								target>
+								target='__blank'>
 								{' '}
 								<img
 									src={facebook}
@@ -40,7 +40,7 @@ const Footer = () => {
 								href='https://www.instagram.com/hdmjesus'
 								rel='noopener'
 								rel='noreferrer'
-								target>
+								target='__blank'>
 								{' '}
 								<img
 									src={instagram}
@@ -56,7 +56,7 @@ const Footer = () => {
 								href='https://www.linkedin.com/in/hdmjesus/'
 								rel='noopener'
 								rel='noreferrer'
-								target>
+								target='__blank'>
 								{' '}
 								<img
 									src={linkedin}
@@ -72,7 +72,7 @@ const Footer = () => {
 								href='https://twitter.com/HDMjesus'
 								rel='noopener'
 								rel='noreferrer'
-								target>
+								target='__blank'>
 								{' '}
 								<img
 									src={twitter}
@@ -88,7 +88,7 @@ const Footer = () => {
 								href='https://github.com/hdmjesus'
 								rel='noopener'
 								rel='noreferrer'
-								target>
+								target='__blank'>
 								{' '}
 								<img
 									src={github}
