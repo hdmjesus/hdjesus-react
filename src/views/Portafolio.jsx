@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Banner from '@/componets/Portafolio/Banner';
-import Projects from '@/componets/Projects';
-import ProjectItem from '@/componets/ProjectItem';
 import Header from '@/componets/Header';
 import Footer from '@/componets/Footer';
 import useGlobalData from '@/Hooks/useGlobalData';
+import LazyProjects from '@/componets/LazyProjects';
 
 const Portafolio = (props) => {
-	const [url, setUrl] = useState();
+	const [url, setUrl] = useState(props.match.path);
 	const [data, setData] = useState([]);
 	const API = useGlobalData();
+
 	useEffect(() => {
-		setUrl(props.match.path);
 		setData(API);
 	}, [API]);
 
@@ -19,11 +18,7 @@ const Portafolio = (props) => {
 		<>
 			<Header />
 			<Banner />
-			<Projects value={url}>
-				{data
-					? data.map((item) => <ProjectItem key={item.id} {...item} />)
-					: ''}
-			</Projects>
+			<LazyProjects url={url} />
 			<Footer />
 		</>
 	);

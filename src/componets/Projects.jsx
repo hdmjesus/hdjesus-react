@@ -1,7 +1,8 @@
 import React from 'react';
 
 const Projects = (props) => {
-	const urlActual = props.value;
+	const urlActual = props.url;
+	console.log(urlActual);
 
 	return (
 		<section className='proyectos' id='proyectos'>
