@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from '@/views/Home';
-import Portafolio from '@/views/Portafolio';
+const Home = React.lazy(() => import('@/views/Home'));
+const Portafolio = React.lazy(() => import('@/views/Portafolio'));
+
 import Contexto from '@/context/StaticContext';
 
 const App = () => {
@@ -11,7 +12,8 @@ const App = () => {
 		const URL = 'https://my-json-server.typicode.com/hdmjesus/-Projects/db';
 		fetch(URL)
 			.then((res) => res.json())
-			.then(({ hdjesus: { proyectos } }) => setData(proyectos));
+			.then(({ hdjesus: { proyectos } }) => setData(proyectos))
+			.catch((err) => console.log(err.message));
 	}, []);
 
 	const { Provider } = Contexto;
@@ -19,11 +21,13 @@ const App = () => {
 	return (
 		<BrowserRouter>
 			<Provider value={data}>
-				<Switch>
-					<Route exact path='/' component={Home} />
-					<Route exact path='/portafolio' component={Portafolio} />
-					{/* <Route component={} /> */}
-				</Switch>
+				<Suspense fallback={null}>
+					<Switch>
+						<Route exact path='/' component={Home} />
+						<Route exact path='/portafolio' component={Portafolio} />
+						{/* <Route component={} /> */}
+					</Switch>
+				</Suspense>
 			</Provider>
 		</BrowserRouter>
 	);

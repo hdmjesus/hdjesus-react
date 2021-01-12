@@ -20,9 +20,9 @@ const Portafolio = (props) => {
 			<Header />
 			<Banner />
 			<Projects value={url}>
-				{data.map((item) => (
-					<ProjectItem key={item.id} {...item} />
-				))}
+				{data
+					? data.map((item) => <ProjectItem key={item.id} {...item} />)
+					: ''}
 			</Projects>
 			<Footer />
 		</>

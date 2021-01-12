@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Hero from '@/componets/Home/Hero.jsx';
-import Projects from '@/componets/Projects';
+import LazyProjects from '@/componets/LazyProjects';
 import ProjectItem from '@/componets/ProjectItem';
 import Services from '@/componets/Home/Services';
-import Technologies from '@/componets/Home/Technologies';
+import Skills from '@/componets/Home/LazySkills';
 import useGlobalData from '@/Hooks/useGlobalData';
+import ButtonUp from '@/componets/ButtonUp';
+import Whatasapp from '@/componets/Whatapps';
 
 import Header from '@/componets/Header';
 import Footer from '@/componets/Footer';
@@ -19,14 +21,16 @@ const Home = () => {
 			<Header />
 			<Hero />
 			<Services />
-			<Technologies />
-			<Projects>
+			<Skills />
+			<LazyProjects>
 				{data &&
 					data
 						.map((item) => <ProjectItem key={item.id} {...item} />)
 						.slice(0, 2)}
 				{}
-			</Projects>
+			</LazyProjects>
+			<ButtonUp />
+			<Whatasapp />
 			<Footer />
 		</>
 	);
