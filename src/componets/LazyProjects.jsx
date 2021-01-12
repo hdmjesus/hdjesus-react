@@ -27,13 +27,15 @@ quiere decir que estamos en la seccion de portafolio y los renderiza todos */}
 								.slice(0, 2)}
 						{}
 					</Projects>
-				) : (
+				) : null}
+
+				{isNearScreen & (urlActual == '/portafolio') ? (
 					<Projects {...props}>
 						{data &&
 							data.map((item) => <ProjectItem key={item.id} {...item} />)}
 						{}
 					</Projects>
-				)}
+				) : null}
 			</Suspense>
 		</div>
 	);
