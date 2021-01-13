@@ -2,14 +2,17 @@ import React, { useState, useEffect } from 'react';
 import fotoHdjesus from '@/statics/images/yox1.webp';
 import fotoHdjesusX2 from '@/statics/images/yox2.webp';
 import Banner from '@/statics/images/work-home.svg';
+import CV from '@/statics/docs/CVjesus.webp';
 
 const Hero = () => {
 	function handleHeader(entries) {
 		const hd = document.getElementById('header');
 
 		if (entries[0].intersectionRatio == 0) {
+			hd.classList.contains('up');
 			hd.classList.add('up');
 		} else {
+			hd.classList.contains('up');
 			hd.classList.remove('up');
 		}
 	}
@@ -29,7 +32,7 @@ const Hero = () => {
 			<div className='hero__container'>
 				<article className='hero__skills'>
 					<div className='hero__curriculum' aria-label='Curriculum'>
-						<a href='' download='cv: Jesus Hernandez'>
+						<a href={CV} download>
 							<p>Hoja de vida</p>
 						</a>
 					</div>

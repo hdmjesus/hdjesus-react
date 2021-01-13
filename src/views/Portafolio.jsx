@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Banner from '@/componets/Portafolio/Banner';
 import Header from '@/componets/Header';
 import Footer from '@/componets/Footer';
 import useGlobalData from '@/Hooks/useGlobalData';
 import LazyProjects from '@/componets/LazyProjects';
-
+import ButtonUp from '@/componets/ButtonUp';
 const Portafolio = (props) => {
 	const [url, setUrl] = useState(props.match.path);
 	const [data, setData] = useState([]);
@@ -19,6 +19,7 @@ const Portafolio = (props) => {
 			<Header />
 			<Banner />
 			<LazyProjects url={url} />
+			<ButtonUp />
 			<Footer />
 		</>
 	);
