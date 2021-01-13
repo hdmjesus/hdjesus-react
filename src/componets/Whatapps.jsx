@@ -1,9 +1,21 @@
 import iconWhatapp from '@/statics/icons/whatsapp.webp';
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
-const Whatasapp = () => {
+const Whatasapp = (props) => {
+	const whatapps = useRef(null);
+	const [element, setELement] = useState();
+	useEffect(function () {
+		setELement(whatapps);
+	}, []);
+	const { handleWhatapps } = props;
 	return (
-		<div id='whatsapp' arial-label='Button to whatapps'>
+		<div
+			ref={whatapps}
+			id='whatsapp'
+			arial-label='Button to whatapps'
+			onClick={() => {
+				handleWhatapps(element);
+			}}>
 			<a
 				rel='noopener'
 				rel='noreferrer'

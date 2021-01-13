@@ -9,7 +9,6 @@ export default function lazyProjects(props) {
 	const [data, setData] = useState([]);
 	const urlActual = props.url;
 	const API = useGlobalData();
-	console.log(props);
 
 	useEffect(() => {
 		setData(API);

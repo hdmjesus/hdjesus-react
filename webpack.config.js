@@ -35,8 +35,9 @@ const config = {
 					'sass-loader',
 				],
 			},
+
 			{
-				test: /\.(png|gif|jpg|svg|webp)$/,
+				test: /\.(png|gif|jpg|svg|webp|pdf)$/,
 				use: [
 					{
 						loader: 'file-loader',
