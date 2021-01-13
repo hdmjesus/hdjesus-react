@@ -13,8 +13,8 @@
 		"clean": "rm -r dist",
 		"build:dev": "webpack serve --config ./webpack.dev.config.js",
 		"build:dll": "webpack --config ./webpack.dll.config.js --mode production",
-		"build": "webpack --config ./webpack.config.js --mode production",
-		"build:all": "npm run build:dll ; npm run build",
+		"build:p": "webpack --config ./webpack.config.js --mode production",
+		"build": "npm run build:dll ; npm run build:p",
 		"serve": "serve ./dist"
 	},
 	"dependencies": {
