@@ -13,8 +13,8 @@
 		"clean": "rm -r dist",
 		"build:dev": "webpack serve --config ./webpack.dev.config.js",
 		"build:dll": "webpack --config ./webpack.dll.config.js --mode production",
-		"build:p": "webpack --config ./webpack.config.js --mode production",
-		"build": "npm run build:dll ; npm run build:p",
+		"build": "webpack --config ./webpack.config.js --mode production",
+		"build:all": "npm run build:dll ; npm run build:p",
 		"serve": "serve ./dist"
 	},
 	"dependencies": {
@@ -58,7 +58,6 @@
 		"terser-webpack-plugin": "^5.0.3",
 		"url-loader": "^4.1.1",
 		"webpack": "^5.10.0",
-		"webpack-bundle-analyzer": "^4.3.0",
 		"webpack-cli": "^4.2.0",
 		"webpack-dev-server": "^3.11.0"
 	},

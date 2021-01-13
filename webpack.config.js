@@ -99,10 +99,10 @@ const config = {
 			},
 		}),
 		// Trae las referencias de los modulos core de nuestra app
-		new webpack.DllReferencePlugin({
-			manifest: require('./modules-manifest.json'),
-			// context: path.resolve(__dirname, '.src/'),
-		}),
+		// new webpack.DllReferencePlugin({
+		// 	manifest: require('./modules-manifest.json'),
+		// 	// context: path.resolve(__dirname, '.src/'),
+		// }),
 		// Elimina las ouput repetidas en cada build de la carpeta dist
 		//Limpia los build anteriores antes de hacer build
 		new CleanWebpackPlugin({
