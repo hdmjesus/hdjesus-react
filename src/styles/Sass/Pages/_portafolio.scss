@@ -1,4 +1,5 @@
 .banner {
+  animation: fadein 2s ease ;
   width: 100%;
   padding-top: 70px;
   @include media(desktop-s) {
@@ -15,4 +16,9 @@
       object-fit: cover;
     }
   }
+}
+
+@keyframes fadein {
+	0%{opacity: 0;}
+	100%{opacity: 1;}
 }

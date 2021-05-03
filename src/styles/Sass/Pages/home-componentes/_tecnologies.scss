@@ -1,5 +1,6 @@
 .tecnologies {
 	margin-bottom: 50px;
+	animation: fadein 2s ease ;
 	&__container {
 		width: 90%;
 		margin: 0 auto;
@@ -137,4 +138,8 @@ body.dark %title {
 		height: 40px;
 		line-height: 35px;
 	}
+}
+@keyframes fadein {
+	0%{opacity: 0;}
+	100%{opacity: 1;}
 }
