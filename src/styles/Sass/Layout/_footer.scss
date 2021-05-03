@@ -1,39 +1,38 @@
-footer {
-	background-color: $gray-light;
+footer hr{
+width: 80%;
+height: 0;
+margin: 0 auto;
+
+
 }
 .footer {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 150px;
+	margin-bottom: 20px;
+	height: auto;
+	color:rgb(49, 49, 49);
 
-	color: $color-body;
 
-	&__nav {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		width: 100%;
-		padding: 10px;
-		text-align: center;
-		ul {
-			display: flex;
-			a {
-				display: inline-block;
-				padding: 5px;
-				color: $color-second;
-				font-weight: 700;
-				cursor: pointer;
-				user-select: none;
-			}
-			a:hover {
-				text-decoration: underline;
-			}
+		@include media(tablet) {
+			flex-direction: row;
 		}
 	}
 
 	&__derechos {
-		width: 100%;
+		width: 40%;
 		text-align: center;
-		padding: 20px 0;
+	
+	}
+	&__redes{
+		width: 40%;
 	}
 }
 
@@ -59,10 +58,7 @@ footer {
 	display: flex;
 	justify-content: center;
 }
-.footer_redes {
-	width: 100%;
-	padding-top: 20px;
-}
+
 
 body.dark .footer__nav a {
 	color: #fff;
@@ -72,6 +68,4 @@ Footer ul li {
 	list-style: none;
 }
 
-body.dark footer {
-	background-color: $button-night;
-}
+
